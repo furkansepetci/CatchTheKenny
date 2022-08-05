@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var timer = Timer()
     var hideTimer = Timer()
     var counter = 20
-    var hideCounter = 20
+    var hideCounter = 40
     var score = 0
     var highScore = 0
     
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
             
         timeLabel.text = "Time: \(counter)"
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(counterFunction), userInfo: nil, repeats: true)
-        hideTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(hideCounterFunction), userInfo: nil, repeats: true)
+        hideTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(hideCounterFunction), userInfo: nil, repeats: true)
         
     }
     
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
                 self.hideCounter = 20
                 self.timeLabel.text = "Time: \(self.counter)"
                 self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.counterFunction), userInfo: nil, repeats: true)
-                self.hideTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.hideCounterFunction), userInfo: nil, repeats: true)
+                self.hideTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(self.hideCounterFunction), userInfo: nil, repeats: true)
             }
             alert.addAction(okButton)
             alert.addAction(replayButton)
